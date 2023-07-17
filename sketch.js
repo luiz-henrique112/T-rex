@@ -99,16 +99,16 @@ function draw() {
     gameOver.visible = true;
     restart.visible = true;
     
-    //defina a velocidade da cada objeto do jogo para 0
+    //define a velocidade da cada objeto do jogo para 0
     ground.velocityX = 0;
     trex.velocityY = 0;
     obstaclesGroup.setVelocityXEach(0);
     cloudsGroup.setVelocityXEach(0);
     
-    //mude a animação do trex
+    //muda a animação do trex
     trex.changeAnimation("collided",trex_collided);
     
-    //defina o tempo de vida dos objetos para que eles nunca sejam destruídos
+    //define o tempo de vida dos objetos para que eles nunca sejam destruídos
     obstaclesGroup.setLifetimeEach(-1);
     cloudsGroup.setLifetimeEach(-1);
     
@@ -122,7 +122,7 @@ function draw() {
 }
 
 function spawnClouds() {
-  //escreva o código aqui para fazer as nuvens surgirem
+  //escreve o código aqui para fazer as nuvens surgirem
   if (frameCount % 60 === 0) {
     var cloud = createSprite(600,120,40,10);
     cloud.y = Math.round(random(80,120));
@@ -130,14 +130,14 @@ function spawnClouds() {
     cloud.scale = 0.5;
     cloud.velocityX = -3;
     
-     //designe tempo de vida para a variável
+     //designa tempo de vida para a variável
     cloud.lifetime = 200;
     
-    //ajuste a profundidade
+    //ajusta a profundidade
     cloud.depth = trex.depth;
     trex.depth = trex.depth + 1;
     
-    //adicione cada nuvem ao grupo
+    //adiciona cada nuvem ao grupo
     cloudsGroup.add(cloud);
   }
   
@@ -149,7 +149,7 @@ function spawnObstacles() {
     //obstacle.debug = true;
     obstacle.velocityX = -(6 + 3*score/100);
     
-    //gere um obstáculo aleatório
+    //gerando um obstáculo aleatório
     var rand = Math.round(random(1,6));
     switch(rand) {
       case 1: obstacle.addImage(obstacle1);
@@ -167,7 +167,8 @@ function spawnObstacles() {
       default: break;
     }
     
-    //designe o escalonamento e tempo de vida ao obstáculo           
+    //designa
+    o escalonamento e tempo de vida ao obstáculo           
     obstacle.scale = 0.5;
     obstacle.lifetime = 300;
     //adicione cada obstáculo ao grupo
